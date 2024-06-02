@@ -208,11 +208,6 @@ body {
   margin-bottom: 15px;
 }
 
-.skills__text {
-  color: var(--secondary-text-color);
-  text-align: justify;
-}
-
 .rated-item {
   display: flex;
   align-items: center;
@@ -255,7 +250,7 @@ body {
 
 .project {
   line-height: 1.5;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .project__title {
