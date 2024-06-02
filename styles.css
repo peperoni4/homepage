@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "miltonian-tattoo";
+  font-family: miltonian-tattoo;
   src: url("./fonts/MiltonianTattoo-Regular.woff2") format("woff2"),
     url("./fonts/MiltonianTattoo-Regular.woff") format("woff");
   font-weight: normal;
@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  font-family: "miltonian-tattoo";
+  font-family: miltonian-tattoo, sans-serif;
   font-size: 2rem;
   line-height: 1.5;
 
@@ -66,7 +66,6 @@ body {
   box-shadow: 1px 1px 7px 7px #f5f5f5;
   padding: 30px;
   max-width: 846px;
-
   background: no-repeat center / cover url("./assets/background.png");
   position: relative;
 }
@@ -97,6 +96,7 @@ body {
 .resume__block_no-border {
   border: none;
 }
+
 /* ===== CONTACT INFO ===== */
 
 .contact-info__container {
@@ -171,6 +171,7 @@ body {
 }
 
 /* ===== INTRO ===== */
+
 .intro {
   display: flex;
   justify-content: start;
@@ -277,10 +278,11 @@ body {
   gap: 30px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (width <= 640px) {
   .resume {
     padding: 5px;
   }
+
   .main-info,
   .contact_info_container {
     flex-direction: column;
@@ -296,7 +298,8 @@ body {
 
   .experiences {
     margin-bottom: 20px;
-    margin-right: 0px;
+    margin-right: 0;
+
     & .experiences__header {
       text-align: center;
     }
