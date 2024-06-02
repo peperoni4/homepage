@@ -1,19 +1,45 @@
+@font-face {
+  font-family: "miltonian-tattoo";
+  src: url("./fonts/MiltonianTattoo-Regular.woff2") format("woff2"),
+    url("./fonts/MiltonianTattoo-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "miltonian-tattoo";
+  font-size: 2rem;
   line-height: 1.5;
 
-  --primary-text-color: #181820;
-  --secondary-text-color: #5c5c62;
-  --durability-text-color: #6a737d9c;
-  --icon-color: #6a737d;
-  --border-color: #ff9a0045;
-  --text-decoration-color: #ff9a00;
+  --primary-text-color: #000;
+  --heading-color: #d11212;
+  --accent-color: #0070c1;
+}
+
+.resume__heading {
+  font-size: 6.4rem;
+  font-weight: 400;
+  position: relative;
+}
+
+.resume__heading::after {
+  content: "";
+  display: block;
+  background: no-repeat center / cover url("./assets/divider.png");
+  width: 238px;
+  height: 119px;
+  margin: 0 auto;
+  margin-top: -60px;
 }
 
 .container {
@@ -38,62 +64,71 @@ body {
   margin: 50px auto;
   border: 1px solid #f5f5f5;
   box-shadow: 1px 1px 7px 7px #f5f5f5;
-  padding: 30px 0;
-  max-width: 900px;
+  padding: 30px;
+  max-width: 846px;
+
+  background: no-repeat center / cover url("./assets/background.png");
+  position: relative;
+}
+
+.resume::before {
+  content: "";
+  position: absolute;
+  background: no-repeat center / cover url("./assets/skull.png");
+  width: 135px;
+  height: 180px;
+  top: 0;
+  right: 12px;
+}
+
+.resume::after {
+  display: block;
+  text-align: right;
+  content: "DEVELOPER";
+  font-size: 3.5rem;
 }
 
 .resume__block {
-  border-bottom: 3px solid var(--border-color);
+  border-bottom: 2px solid #000;
   padding-bottom: 30px;
   margin-bottom: 15px;
 }
 
-@media screen and (max-width: 576px) {
-  .main-info,
-  .contact_info_container {
-    flex-direction: column;
-  }
-
-  .contact_info_container {
-    align-items: center;
-  }
-
-  .contact-info__block:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
-  .experiences {
-    margin-right: 0;
-  }
+.resume__block_no-border {
+  border: none;
 }
-
 /* ===== CONTACT INFO ===== */
 
+.contact-info__container {
+  justify-content: center;
+}
+
 .contact-info__header,
-.contact-info__sub-header {
+.contact-info__sub-header,
+.resume__heading {
   text-align: center;
 }
 
 .contact-info__header {
-  color: var(--primary-text-color);
-  margin-bottom: 15px;
-  text-decoration-color: var(--text-decoration-color);
-  text-decoration-line: underline;
+  color: #d11212;
+  font-weight: 400;
 }
 
 .contact-info__sub-header {
-  color: var(--secondary-text-color);
-  margin-bottom: 30px;
+  color: #0070c1;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
 }
 
 .contact-info__block {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
 }
 
 .contact-info__block--center {
   justify-content: center;
+  position: relative;
 }
 
 .contact-info__item {
@@ -103,13 +138,9 @@ body {
   justify-content: start;
 }
 
-.contact-info__item:not(:last-child) {
-  margin-bottom: 20px;
-}
-
 .contact-info__item-icon-wrapper {
   margin-right: 10px;
-  width: 20px;
+  width: 38px;
   display: flex;
   justify-content: center;
 }
@@ -132,6 +163,13 @@ body {
   border-color: var(--text-decoration-color);
 }
 
+.avatar-hat {
+  position: absolute;
+  bottom: 0;
+  right: 40%;
+  transform: translateX(50%);
+}
+
 /* ===== INTRO ===== */
 .intro {
   display: flex;
@@ -151,18 +189,20 @@ body {
 }
 
 .intro__icon path {
-  fill: var(--text-decoration-color);
+  fill: #d11212;
 }
 
 .intro_text {
-  color: var(--secondary-text-color);
+  color: #000;
   text-align: justify;
+  font-size: 20px;
 }
 
 /* ===== SKILLS ==== */
 
-.skills__header {
-  color: var(--secondary-text-color);
+.skills__header,
+.languages__header {
+  color: #d11212;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -172,100 +212,97 @@ body {
   text-align: justify;
 }
 
+.rated-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rated-item__rank {
+  display: flex;
+  gap: 5px;
+}
+
+.rated-item__point {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: no-repeat center / cover url("./assets/skill-rank.png");
+}
+
+.rated-item__point-disabled {
+  filter: brightness(50%);
+}
+
 /* ===== EXPERIENCE ===== */
 
 .experiences {
-  flex: 1 1 60%;
-  margin-right: 50px;
+  flex: 1 1 45%;
+  margin-right: 40px;
 }
 
 .experiences__header {
-  color: var(--secondary-text-color);
+  color: #d11212;
   text-align: left;
   margin-bottom: 20px;
 }
 
-.experiences__company-header-durability {
-  color: var(--durability-text-color);
-  text-align: left;
-  margin-bottom: 10px;
-  font-size: 15px;
+.projects-list {
+  margin-left: 20px;
 }
 
-.experiences__company-header-name {
-  color: var(--primary-text-color);
-  text-decoration-color: var(--text-decoration-color);
-  text-decoration-line: underline;
-  text-align: left;
+.project {
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+.project__title {
+  color: #0070c1;
+}
+
+.project__description {
+  text-align: justify;
+}
+
+.project:not(.project:last-child) {
   margin-bottom: 20px;
-}
-
-.experiences__company-project {
-  margin-left: 15px;
-  margin-bottom: 25px;
-}
-
-.experiences__company-project-role {
-  color: var(--durability-text-color);
-  text-align: left;
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-.experiences__company-project-name {
-  color: var(--primary-text-color);
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-.experiences__company-project-responsibilities {
-  color: var(--secondary-text-color);
-  padding-left: 20px;
 }
 
 /* ===== ADDITIONAL INFO ===== */
 
 .additional-info {
-  flex: 1 1 40%;
+  flex: 1 1 45%;
+  justify-content: flex-start;
+  gap: 30px;
 }
 
-.additional-info__education {
-  margin-bottom: 20px;
-}
+@media screen and (max-width: 640px) {
+  .resume {
+    padding: 5px;
+  }
+  .main-info,
+  .contact_info_container {
+    flex-direction: column;
+  }
 
-.additional-info__education-header {
-  color: var(--secondary-text-color);
-  text-align: left;
-  margin-bottom: 20px;
-}
+  .contact_info_container {
+    align-items: center;
+  }
 
-.additional-info__education-university-durability {
-  color: var(--durability-text-color);
-  text-align: left;
-  margin-bottom: 10px;
-  font-size: 15px;
-}
+  .contact-info__block:not(:last-child) {
+    margin-bottom: 20px;
+  }
 
-.additional-info__education-university-speciality {
-  color: var(--primary-text-color);
-  text-align: left;
-  margin-bottom: 10px;
-}
+  .experiences {
+    margin-bottom: 20px;
+    margin-right: 0px;
+    & .experiences__header {
+      text-align: center;
+    }
+  }
 
-.additional-info__education-university-name {
-  color: var(--secondary-text-color);
-}
-
-.additional-info__languages {
-  margin-bottom: 20px;
-}
-
-.additional-info__languages-header {
-  color: var(--secondary-text-color);
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.additional-info__languages-item {
-  color: var(--secondary-text-color);
+  .resume::before {
+    display: none;
+  }
 }
