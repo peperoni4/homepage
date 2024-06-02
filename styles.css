@@ -88,7 +88,7 @@ body {
 }
 
 .resume__block {
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--primary-text-color);
   padding-bottom: 30px;
   margin-bottom: 15px;
 }
@@ -110,12 +110,12 @@ body {
 }
 
 .contact-info__header {
-  color: #d11212;
+  color: var(--heading-color);
   font-weight: 400;
 }
 
 .contact-info__sub-header {
-  color: #0070c1;
+  color: var(--accent-color);
   font-size: 2.8rem;
   margin-bottom: 15px;
 }
@@ -190,11 +190,11 @@ body {
 }
 
 .intro__icon path {
-  fill: #d11212;
+  fill: var(--heading-color);
 }
 
 .intro_text {
-  color: #000;
+  color: var(--primary-text-color);
   text-align: justify;
   font-size: 20px;
 }
@@ -203,7 +203,7 @@ body {
 
 .skills__header,
 .languages__header {
-  color: #d11212;
+  color: var(--heading-color);
   text-align: center;
   margin-bottom: 15px;
 }
@@ -244,7 +244,7 @@ body {
 }
 
 .experiences__header {
-  color: #d11212;
+  color: var(--heading-color);
   text-align: left;
   margin-bottom: 20px;
 }
@@ -259,7 +259,7 @@ body {
 }
 
 .project__title {
-  color: #0070c1;
+  color: var(--accent-color);
 }
 
 .project__description {
