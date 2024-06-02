@@ -71,20 +71,21 @@ body {
   position: relative;
 }
 
-.resume::after {
-  display: block;
-  text-align: right;
-  content: "DEVELOPER";
-  font-size: 3.5rem;
-}
-
-.skull-mark {
+.resume::before {
+  content: "";
   position: absolute;
   background: no-repeat center / cover url("./assets/skull.png");
   width: 135px;
   height: 180px;
   top: 0;
   right: 12px;
+}
+
+.resume::after {
+  display: block;
+  text-align: right;
+  content: "DEVELOPER";
+  font-size: 3.5rem;
 }
 
 .resume__block {
@@ -301,7 +302,7 @@ body {
     }
   }
 
-  .skull-mark {
+  .resume::before {
     display: none;
   }
 }
